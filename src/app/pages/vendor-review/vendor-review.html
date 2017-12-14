@@ -1,0 +1,54 @@
+<div id="main">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>HOME > Vendor Review</h5>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
+    </div>
+  </div>
+  <hr />
+
+<div class="form-horizontal">
+    <p-dataTable [value]="vendors">
+        <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+        <p-column field="vendorName" header="Vendor Name"></p-column>
+        <p-column field="mobile" header="Mobile"></p-column>
+        <p-column field="email" header="Email"></p-column>
+        <p-column styleClass="col-button">
+          <ng-template pTemplate="header">
+            <button type="button" pButton icon="fa-refresh"></button>
+          </ng-template>
+          <ng-template let-car="rowData" pTemplate="body">
+            <button type="button" pButton (click)="showDialogToAdd()" icon="fa-info"></button>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+</div>
+  <br />
+  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="form-group row">
+      <div class="offset-sm-4 col-sm-4">
+        <button type="submit" class="btn btn-block btn-primary btn-auth">Approve</button>
+      </div>
+    </div>
+  </form>
+
+  <p-dialog header="Review" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="700">
+    <div class="form-horizontal">
+        <p-dataTable [value]="vendorDetails">
+            <p-column field="computer" header="Computer"></p-column>
+            <p-column field="officeSupplier" header="Office Supplier"></p-column>
+            <p-column field="medicalEquip" header="Medical Equip"></p-column>
+          </p-dataTable>
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" pButton icon="fa-check" (click)="save()" label="Close"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
+</div>

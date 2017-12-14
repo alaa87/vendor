@@ -1,0 +1,49 @@
+<div id="login-container">
+    <div class="wrapper">
+        <div class="row col-centered">
+            <div class="offset-md-12 welcome">
+                Welcome
+            </div>
+            <div class="offset-lg-2 col-lg-8 offset-sm-2 col-sm-8 welcome-message">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s.
+            </div>
+        </div>
+        <div class="logo col-centered">
+            <img src="{{ ( '/logo.png' | baAppPicture ) }}" class="logo-img"/>
+            <span>certacure</span>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+            <div class="row input-item" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+                <div class="col-sm-8 offset-sm-2">
+                    <input [(ngModel)]='sellectedEmail' [formControl]="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                </div>
+            </div>
+            <div class="row input-item" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+                <div class="col-sm-8 offset-sm-2">
+                    <input [(ngModel)]='selectedPassword' [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+            <div class="row input-item">
+                <div class="col-sm-8 offset-sm-2">
+                    <button [disabled]="!form.valid" type="submit" class="btn btn-block btn-info btn-auth">login</button>
+                </div>
+            </div>
+            <ul id="helper-link" class="col-sm-12 col-centered">
+                <li>
+                    <a routerLink="/register">New Register</a>
+                </li>
+                <li>
+                    <a href="#">Forget Password</a>
+                </li>
+            </ul>
+          <div id="copyright" class="col-centered">
+            <p>
+              Copyright © 2017
+              <a href="http://certacure.com/" target="_blank">CERTACURE</a>. All rights reserved.
+            </p>
+          </div>
+        </form>
+
+    </div>
+</div>

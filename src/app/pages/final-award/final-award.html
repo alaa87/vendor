@@ -1,0 +1,39 @@
+<div id="main">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>HOME > Final Award</h5>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
+    </div>
+  </div>
+  <hr />
+<div class="form-horizontal">
+    <p-dataTable [value]="vendors">
+        <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+        <p-column field="TenderNumber" header="Vendor Name"></p-column>
+        <p-column field="TenderName" header="Mobile"></p-column>
+        <p-column field="SupplierName" header="Email"></p-column>
+        <p-column styleClass="col-button">
+          <ng-template pTemplate="header">
+            Detailed Offer
+          </ng-template>
+          <ng-template let-car="rowData" pTemplate="body">
+            <button type="button" pButton routerLink="/pages/detailedOffer" icon="fa-info"></button>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+</div>
+  <br />
+  <form class="form-horizontal">
+    <div class="form-group row">
+      <div class="offset-sm-4 col-sm-4">
+        <button type="submit" class="btn btn-block btn-primary btn-auth" (click)="confirm1()">Final Award</button>
+      </div>
+    </div>
+  </form>
+</div>
+<p-confirmDialog></p-confirmDialog>

@@ -1,0 +1,143 @@
+<div id="main">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>HOME > Vendor Registration</h5>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
+    </div>
+  </div>
+  <hr />
+
+  <p-panel header="User Infromation" [toggleable]="true">
+    <div class="form-horizontal">
+      <div class="form-group row">
+        <label for="inputName3" class="col-sm-2 control-label">Username</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputName3" placeholder="Username ">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+        <label for="inputPassword4" class="col-sm-2 control-label">Confirm Password</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password">
+        </div>
+      </div>
+    </div>
+  </p-panel>
+
+  <p-panel header="Company Infromation" [toggleable]="true">
+    <div class="form-horizontal">
+      <div class="form-group row">
+        <label for="inputName3" class="col-sm-2 control-label">Company Name</label>
+
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputName3" placeholder="Company Name ">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 control-label">Address</label>
+
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="inputPassword3" placeholder="Address  ">
+        </div>
+        <label for="inputPassword4" class="col-sm-2 control-label">Mobile Number</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Mobile Number ">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
+
+        <div class="col-sm-4">
+          <input type="email" class="form-control" id="inputPassword3" placeholder="Email">
+        </div>
+        <label for="inputPassword4" class="col-sm-2 control-label">contact Person Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="inputPassword4" placeholder="contact Person Name">
+        </div>
+      </div>
+    </div>
+  </p-panel>
+
+  <p-panel header="Field of Interests" [toggleable]="true">
+    <p-dataTable [value]="vendors">
+      <p-column field="computer" header="Computer"></p-column>
+      <p-column field="officeSupplier" header="Office Supplier"></p-column>
+      <p-column field="medicalEquip" header="Medical Equip"></p-column>
+      <p-column styleClass="col-button">
+        <ng-template pTemplate="header">
+          View Document
+        </ng-template>
+        <ng-template let-car="rowData" pTemplate="body">
+          <button type="button" pButton icon="fa-file"></button>
+        </ng-template>
+      </p-column>
+      <p-column styleClass="col-button">
+        <ng-template pTemplate="header">
+          <button type="button" pButton icon="fa-refresh"></button>
+          <button type="button" pButton (click)="showDialogToAdd()" icon="fa-plus"></button>
+        </ng-template>
+        <ng-template let-car="rowData" pTemplate="body">
+          <button type="button" pButton (click)="showDialogToAdd()" icon="fa-edit"></button>
+        </ng-template>
+      </p-column>
+    </p-dataTable>
+  </p-panel>
+
+  <br />
+  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="form-group row">
+      <div class="offset-sm-4 col-sm-4">
+        <button type="submit" class="btn btn-block btn-primary btn-auth">Sign up</button>
+      </div>
+    </div>
+  </form>
+
+
+
+  <p-dialog header="Field of Interests" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="500">
+    <div class="form-horizontal">
+      <div class="form-group row">
+        <label for="Computer" class="col-sm-4 control-label">Computer</label>
+        <div class="col-sm-8">
+          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Computer"></p-dropdown>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Office-Supplier" class="col-sm-4 control-label">Office Supplier</label>
+        <div class="col-sm-8">
+          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Office Supplier"></p-dropdown>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Medical-Equip" class="col-sm-4 control-label">Medical Equip</label>
+        <div class="col-sm-8">
+          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Medical Equip"></p-dropdown>
+        </div>
+      </div>
+      <div class="row">
+        <p-fileUpload #documents name="documents" [showUploadButton]="false"
+        multiple="multiple" accept="image/jpg,image/png,image/jpeg" maxFileSize="5000000"
+        (onSelect)="selectDocuments($event)" (onClear)="clearDocuments()"
+        (onRemove)="removeDocument($event)">
+        </p-fileUpload>
+      </div>
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+        <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
+</div>

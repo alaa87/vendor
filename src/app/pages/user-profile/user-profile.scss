@@ -1,0 +1,25 @@
+@import '../../theme/sass/_variables';
+
+.select-box {
+    position: relative;
+}
+
+    .select-box:after {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid $smartway-color;
+        position: absolute;
+        top: 40%;
+        right: 30px;
+        content: "";
+        z-index: 100;
+    }
+
+    .select-box select {
+        width: 100%;
+        position: relative;
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+    }

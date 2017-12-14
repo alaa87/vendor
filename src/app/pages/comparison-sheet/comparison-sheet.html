@@ -1,0 +1,116 @@
+<div id="main">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>HOME > Comparison Sheet</h5>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
+    </div>
+  </div>
+  <hr />
+
+  <div class="form-horizontal">
+      <div class="form-group row">
+          <label for="Medical-Equip" class="col-sm-3 control-label">Item Number</label>
+          <div class="col-sm-3">
+              <input type="text" pInputText />
+          </div>
+          <label for="Medical-Equip" class="col-sm-3 control-label">Tender Date</label>
+          <div class="col-sm-3">
+              <p-calendar [showIcon]="true" showButtonBar="true"></p-calendar>
+          </div>
+        </div>
+          <div class="form-group row">
+              <label for="Medical-Equip" class="col-sm-3 control-label">Tender Name</label>
+              <div class="col-sm-3">
+                  <input type="text" pInputText />
+              </div>
+              
+              <label for="Medical-Equip" class="col-sm-3 control-label">Closing Date</label>
+              <div class="col-sm-3">
+                  <p-calendar [showIcon]="true" showButtonBar="true"></p-calendar>
+              </div>
+            </div>
+      <div class="form-group row">
+          <div class="offset-sm-4 col-sm-4">
+            <button type="submit" class="btn btn-block btn-success btn-auth">Search</button>
+          </div>
+        </div>
+  </div>
+
+  <div class="form-horizontal">
+    <p-dataTable [value]="tenders">
+      <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
+      <p-column field="vendor" header="Vendors"></p-column>
+      <p-column field="pc" header="PC" [style]="{'overflow':'visible'}">
+        <ng-template let-item="rowData" pTemplate="body">
+          <div class="form-horizontal">
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-6 control-label">Complied</label>
+              <label for="Computer" class="col-sm-6 control-label">Unit Price: 500</label>
+            </div>
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-6 control-label">QTY: 6</label>
+              <label for="Computer" class="col-sm-6 control-label">Period: 20</label>
+            </div>
+
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-12 control-label">Objection: Lorem ipsum har varit standard ända sedan 1500-talet</label>
+            </div>
+          </div>
+        </ng-template>
+      </p-column>
+      <p-column field="printer" header="Printer" [style]="{'overflow':'visible'}">
+        <ng-template let-item="rowData" pTemplate="body">
+          <div class="form-horizontal">
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-6 control-label">Complied</label>
+              <label for="Computer" class="col-sm-6 control-label">Unit Price: 500</label>
+            </div>
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-6 control-label">QTY: 6</label>
+              <label for="Computer" class="col-sm-6 control-label">Period: 20</label>
+            </div>
+
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-12 control-label">Objection: Lorem ipsum har varit standard ända sedan 1500-talet</label>
+            </div>
+          </div>
+        </ng-template>
+      </p-column>
+      <p-column field="laptop" header="Laptop" [style]="{'overflow':'visible'}">
+        <ng-template let-item="rowData" pTemplate="body">
+          <div class="form-horizontal">
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-6 control-label">Complied</label>
+              <label for="Computer" class="col-sm-6 control-label">Unit Price: 500</label>
+            </div>
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-6 control-label">QTY: 6</label>
+              <label for="Computer" class="col-sm-6 control-label">Period: 20</label>
+            </div>
+
+            <div class="form-group row form-group-table">
+              <label for="Computer" class="col-sm-12 control-label">Objection: Lorem ipsum har varit standard ända sedan 1500-talet</label>
+            </div>
+          </div>
+        </ng-template>
+      </p-column>
+    </p-dataTable>
+  </div>
+  <br />
+  <div class="form-horizontal">
+    <div class="form-group row">
+      <div class="offset-sm-6 col-sm-3">
+        <button type="submit" class="btn btn-block btn-primary btn-auth" (click)="confirm1()">Award Selected</button>
+      </div>
+      <div class="col-sm-3">
+        <button type="submit" class="btn btn-block btn-danger btn-auth" (click)="confirm2()">Cancel Award </ button>
+      </div>
+    </div>
+  </div>
+  <p-confirmDialog></p-confirmDialog>
+</div>

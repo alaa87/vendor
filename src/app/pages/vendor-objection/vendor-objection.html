@@ -1,0 +1,52 @@
+<div id="main">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>HOME > Final Award</h5>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-sm-2">
+      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
+    </div>
+  </div>
+  <hr />
+<div class="form-horizontal">
+    <p-dataTable [value]="vendors">
+        <p-column field="TenderNumber" header="Tender Number"></p-column>
+        <p-column field="TenderName" header="Tender Name"></p-column>
+        <p-column styleClass="col-button" field="SupplierName" header="RFQ Proposal" [style]="{'overflow':'visible'}">
+            <ng-template let-item="rowData" pTemplate="body">
+                <div class="row">
+                  <div class="col-sm-6">
+                      <button pButton type="button" label="TECH" (click)="showDialogToAdd(item)"></button>
+                  </div>
+                  <div class="col-sm-6">
+                      <button pButton type="button" label="FIN" (click)="showDialogToAdd(item)"></button>
+                  </div>
+                </div>
+            </ng-template>
+        </p-column>
+        <p-column styleClass="col-button">
+          <ng-template pTemplate="header">
+            Object
+          </ng-template>
+          <ng-template let-car="rowData" pTemplate="body">
+            <button type="button" pButton routerLink="/pages/vendorObjectionDetails" icon="fa-info"></button>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+</div>
+
+
+<p-dialog header="Document" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="700">
+    <div class="form-horizontal">
+        <iframe  src="http://vfu.bg/en/e-Learning/Computer-Basics--computer_basics2.pdf" style="width:100%; height:500px;" frameborder="0"></iframe>        
+    </div>
+    <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+        <button type="button" pButton icon="fa-check" (click)="save()" label="Close"></button>
+      </div>
+    </p-footer>
+  </p-dialog>
+</div>

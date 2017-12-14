@@ -1,0 +1,44 @@
+     [ 
+         {
+            "Id": 1,
+           "title": "Vendor Registration",
+           "url": "/pages/vendorRegistration",
+           "active": true,
+           "icon":"fa fa-home"
+        },
+        {
+            "Id": 2,
+            "title": "Vendor Review",
+            "url": "/pages/vendorReview",
+            "active": false,
+            "icon":"fa fa-eye"
+         },
+         {
+             "Id": 3,
+             "title": "RFQ Entry",
+            "url": "/pages/rfqEntry",
+            "active": false,
+            "icon":"zmdi zmdi-tv-list"
+         },
+         {
+             "Id": 4,
+             "title": "Comparison Sheet",
+            "url": "/pages/comparisonSheet",
+            "active": false,
+            "icon":"zmdi zmdi-cloud-outline"
+         },
+         {
+             "Id": 5,
+             "title": "Final Award",
+            "url": "/pages/finalAward",
+            "active": false,
+            "icon":"fa fa-pie-chart"
+         },
+         {
+             "Id": 6,
+             "title": "Vendor Objections",
+            "url": "/pages/vendorObjection",
+            "active": false,
+            "icon":"fa fa-line-chart"
+         }
+    ]
