@@ -25,7 +25,7 @@
               <div class="col-md-9 select-box">
                 <select class="form-control" [(ngModel)]="user.Country" [formControl]="country">
                   <option value="-1" selected>Select Country</option>
-                    <option *ngFor="let item of countries.data" [ngValue]="item">{{item.name}}</option>
+                    <option *ngFor="let item of countries" [ngValue]="item">{{item.name}}</option>
                 </select>
               </div>
             </div>

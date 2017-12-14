@@ -95,7 +95,7 @@
   </p-panel>
 
   <br />
-  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+  <form class="form-horizontal">
     <div class="form-group row">
       <div class="offset-sm-4 col-sm-4">
         <button type="submit" class="btn btn-block btn-primary btn-auth">Sign up</button>
@@ -110,33 +110,32 @@
       <div class="form-group row">
         <label for="Computer" class="col-sm-4 control-label">Computer</label>
         <div class="col-sm-8">
-          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Computer"></p-dropdown>
+          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Computer"></p-dropdown>
         </div>
       </div>
       <div class="form-group row">
         <label for="Office-Supplier" class="col-sm-4 control-label">Office Supplier</label>
         <div class="col-sm-8">
-          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Office Supplier"></p-dropdown>
+          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Office Supplier"></p-dropdown>
         </div>
       </div>
       <div class="form-group row">
         <label for="Medical-Equip" class="col-sm-4 control-label">Medical Equip</label>
         <div class="col-sm-8">
-          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Medical Equip"></p-dropdown>
+          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Medical Equip"></p-dropdown>
         </div>
       </div>
       <div class="row">
         <p-fileUpload #documents name="documents" [showUploadButton]="false"
         multiple="multiple" accept="image/jpg,image/png,image/jpeg" maxFileSize="5000000"
-        (onSelect)="selectDocuments($event)" (onClear)="clearDocuments()"
-        (onRemove)="removeDocument($event)">
+        (onSelect)="selectDocuments($event)" (onClear)="clearDocuments()">
         </p-fileUpload>
       </div>
     </div>
     <p-footer>
       <div class="ui-dialog-buttonpane ui-helper-clearfix">
-        <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-        <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+        <button type="button" pButton icon="fa-close" label="Delete"></button>
+        <button type="button" pButton icon="fa-check" label="Save"></button>
       </div>
     </p-footer>
   </p-dialog>

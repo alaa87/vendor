@@ -32,7 +32,7 @@
                     <div class="col-sm-10 select-box">
                       <select class="form-control" [(ngModel)]="user.Country" [formControl]="country">
                         <option value="-1" selected>Select Country</option>
-                          <option *ngFor="let item of countries.data" [selected]="item.code === user.Country.code">{{item.name}}</option>
+                          <option *ngFor="let item of countries" [selected]="item.code === user.Country.code">{{item.name}}</option>
                       </select>
                     </div>
                   </div>

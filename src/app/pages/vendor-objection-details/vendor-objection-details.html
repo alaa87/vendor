@@ -32,7 +32,7 @@
       <div class="form-group row">
         <label for="Computer" class="col-sm-4 control-label">Objection Item</label>
         <div class="col-sm-8">
-          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'100%'}" editable="true" placeholder="Select a Objection Item"></p-dropdown>
+          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Objection Item"></p-dropdown>
         </div>
       </div>
       <div class="form-group row">
@@ -44,8 +44,8 @@
     </div>
     <p-footer>
       <div class="ui-dialog-buttonpane ui-helper-clearfix">
-        <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-        <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+        <button type="button" pButton icon="fa-close" label="Delete"></button>
+        <button type="button" pButton icon="fa-check" label="Save"></button>
       </div>
     </p-footer>
   </p-dialog>
