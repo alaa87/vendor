@@ -21,6 +21,5 @@ export * from './equal.validator';
 export * from './equalTo.validator';
 export * from './notEqual.validator';
 export * from './notEqualTo.validator';
-export * from './customRange.validator';
 export * from './customAgeRange.validator';
 export * from './customRequired.validator';

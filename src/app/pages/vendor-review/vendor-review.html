@@ -29,13 +29,13 @@
       </p-dataTable>
 </div>
   <br />
-  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+  <div class="form-horizontal">
     <div class="form-group row">
       <div class="offset-sm-4 col-sm-4">
         <button type="submit" class="btn btn-block btn-primary btn-auth">Approve</button>
       </div>
     </div>
-  </form>
+  </div>
 
   <p-dialog header="Review" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="700">
     <div class="form-horizontal">
