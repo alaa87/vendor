@@ -13,25 +13,24 @@ export class SidebarComponent implements OnInit {
 
   menus: any[] = [];
   busy: Subscription;
-
+  username: string;
   constructor(private _router: Router, private _menuService: MenuService) {
 
   }
 
   ngOnInit() {
-    
+    let user = JSON.parse(localStorage.getItem('username'))
+    if(user == 'vendor@certacure.com'){
+      this.username = 'vendor';
+    } else{
+      this.username = 'hospital';
+    }
     this.getMenus();
   }
 
   getMenus() {
     this.menus = [];
-    let user = JSON.parse(localStorage.getItem('username'))
-    if(user == 'vendor@certacure.com'){
-        user = 'vendor';
-    } else{
-      user = 'hospital';
-    }
-    this._menuService.getMenus(user)
+    this._menuService.getMenus(this.username)
       .subscribe((data: any[]) => {
         this.menus = data;
       });
