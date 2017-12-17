@@ -1,5 +1,0 @@
-     [ 
-         {"source": "assets/images/news1.jpg", "alt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac tempor ex, sit amet placerat diam. Sed a tempus lorem. Cras et orci mollis tortor rutrum porta. Vestibulum id suscipit massa.", "title":"What is Lorem Ipsum"},
-        {"source": "assets/images/news2.jpg", "alt": "Mauris tincidunt est a velit accumsan hendrerit. Vestibulum non turpis id dui auctor commodo non nec leo. Integer lobortis luctus arcu sed vulputate. Nullam convallis maximus est at facilisis. Pellentesque commodo est vel consequat luctus.", "title":"Where does it come from"},
-        {"source": "assets/images/news3.jpg", "alt": "Donec vitae lectus dolor. Aliquam aliquam posuere ex vel facilisis. Morbi semper sodales sapien quis ultrices. Donec metus eros, tincidunt quis vehicula quis, maximus ut risus.", "title":"Where can I get some"}
-    ]

@@ -12,7 +12,8 @@ import { Subscription } from 'rxjs/Subscription';
 export class ComputerSupplyTenderComponent {
 
   displaySpecsDialog: boolean;
-  displayRespondDialog: boolean;
+  displayVendorDialog: boolean;
+  displayHospitalDialog: boolean;
 
   vendor: {};
 
@@ -38,11 +39,22 @@ export class ComputerSupplyTenderComponent {
   }
 
   showRespondDialogToAdd() {
-    this.displayRespondDialog = true;
+
+    let user = JSON.parse(localStorage.getItem('username'))
+    if(user == 'vendor@certacure.com'){
+      this.displayVendorDialog = true;
+    } else{
+      this.displayHospitalDialog = true;
+    }
   }
   
   saveRespondDialogToAdd() {
-    this.displayRespondDialog = false;
+    let user = JSON.parse(localStorage.getItem('username'))
+    if(user == 'vendor@certacure.com'){
+      this.displayVendorDialog = false;
+    } else{
+      this.displayHospitalDialog = false;
+    }
   }
 
   save() {

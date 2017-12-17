@@ -5,13 +5,6 @@
     </div>
   </div>
   <br />
-  <div class="row">
-    <div class="col-sm-2">
-      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
-    </div>
-  </div>
-  <hr />
-
   <p-panel header="User Infromation" [toggleable]="true">
     <div class="form-horizontal">
       <div class="form-group row">
@@ -57,7 +50,6 @@
       </div>
       <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 control-label">Email</label>
-
         <div class="col-sm-4">
           <input type="email" class="form-control" id="inputPassword3" placeholder="Email">
         </div>
@@ -66,22 +58,19 @@
           <input type="text" class="form-control" id="inputPassword4" placeholder="contact Person Name">
         </div>
       </div>
+      <div class="form-group row">
+        <div class="col-sm-12">
+          <p-fileUpload #documents name="documents" [showUploadButton]="false" multiple="multiple" accept="image/jpg,image/png,image/jpeg"
+            maxFileSize="5000000" (onSelect)="selectDocuments($event)" (onClear)="clearDocuments()">
+          </p-fileUpload>
+        </div>
+      </div>
     </div>
   </p-panel>
 
   <p-panel header="Field of Interests" [toggleable]="true">
     <p-dataTable [value]="vendors">
-      <p-column field="computer" header="Computer"></p-column>
-      <p-column field="officeSupplier" header="Office Supplier"></p-column>
-      <p-column field="medicalEquip" header="Medical Equip"></p-column>
-      <p-column styleClass="col-button">
-        <ng-template pTemplate="header">
-          View Document
-        </ng-template>
-        <ng-template let-car="rowData" pTemplate="body">
-          <button type="button" pButton icon="fa-file"></button>
-        </ng-template>
-      </p-column>
+      <p-column field="computer" header="Description"></p-column>
       <p-column styleClass="col-button">
         <ng-template pTemplate="header">
           <button type="button" pButton icon="fa-refresh"></button>
@@ -108,28 +97,10 @@
   <p-dialog header="Field of Interests" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="500">
     <div class="form-horizontal">
       <div class="form-group row">
-        <label for="Computer" class="col-sm-4 control-label">Computer</label>
+        <label for="Computer" class="col-sm-4 control-label">Field of Interests</label>
         <div class="col-sm-8">
-          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Computer"></p-dropdown>
+          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Field of Interests"></p-dropdown>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="Office-Supplier" class="col-sm-4 control-label">Office Supplier</label>
-        <div class="col-sm-8">
-          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Office Supplier"></p-dropdown>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="Medical-Equip" class="col-sm-4 control-label">Medical Equip</label>
-        <div class="col-sm-8">
-          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Medical Equip"></p-dropdown>
-        </div>
-      </div>
-      <div class="row">
-        <p-fileUpload #documents name="documents" [showUploadButton]="false"
-        multiple="multiple" accept="image/jpg,image/png,image/jpeg" maxFileSize="5000000"
-        (onSelect)="selectDocuments($event)" (onClear)="clearDocuments()">
-        </p-fileUpload>
       </div>
     </div>
     <p-footer>

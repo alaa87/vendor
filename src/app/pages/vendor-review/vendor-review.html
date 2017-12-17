@@ -5,13 +5,6 @@
     </div>
   </div>
   <br />
-  <div class="row">
-    <div class="col-sm-2">
-      <button type="button" class="btn btn-back" routerLink="/pages/home">Back</button>
-    </div>
-  </div>
-  <hr />
-
 <div class="form-horizontal">
     <p-dataTable [value]="vendors">
         <p-column [style]="{'width':'38px'}" selectionMode="multiple"></p-column>
@@ -40,9 +33,7 @@
   <p-dialog header="Review" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="700">
     <div class="form-horizontal">
         <p-dataTable [value]="vendorDetails">
-            <p-column field="computer" header="Computer"></p-column>
-            <p-column field="officeSupplier" header="Office Supplier"></p-column>
-            <p-column field="medicalEquip" header="Medical Equip"></p-column>
+            <p-column field="computer" header="Field of Interests"></p-column>
           </p-dataTable>
     </div>
     <p-footer>

@@ -35,14 +35,17 @@ export class LoginComponent {
     }
 
     public onSubmit(values: Object): void {
-        if (this.form.valid) {
-            this.user.Country = new Country;
-            this.user.Country.name = "Jordan";
-            this.user.Country.code = "JO";
-            this.user.Name = "Avatar";
-            this.user.Email = this.sellectedEmail;
-            localStorage.setItem('User', JSON.stringify(this.user));
-            this._router.navigateByUrl('/pages/home');
+        if(this.sellectedEmail == 'vendor@certacure.com' || this.sellectedEmail == 'hospital@certacure.com'){
+            if (this.form.valid) {
+                this.user.Country = new Country;
+                this.user.Country.name = "Jordan";
+                this.user.Country.code = "JO";
+                this.user.Name = "Avatar";
+                this.user.Email = this.sellectedEmail;
+                localStorage.setItem('User', JSON.stringify(this.user));
+                localStorage.setItem('username', JSON.stringify(this.sellectedEmail));
+                this._router.navigateByUrl('/pages/rfqEntry');
+            }
         }
       }
 }

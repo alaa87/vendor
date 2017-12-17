@@ -41,9 +41,9 @@ export class VendorReviewComponent {
   ngOnInit() {
 
     this.vendorDetails = [];
-    this.vendorDetails.push({computer: 'Computer 1', officeSupplier: 'Office 1', medicalEquip: 'Medical 1'});
-    this.vendorDetails.push({computer: 'Computer 2', officeSupplier: 'Office 2', medicalEquip: 'Medical 2'});
-    this.vendorDetails.push({computer: 'Computer 3', officeSupplier: 'Office 3', medicalEquip: 'Medical 3'});
+    this.vendorDetails.push({computer: 'Computer', officeSupplier: 'Office 1', medicalEquip: 'Medical 1'});
+    this.vendorDetails.push({computer: 'Office', officeSupplier: 'Office 2', medicalEquip: 'Medical 2'});
+    this.vendorDetails.push({computer: 'Medical Equip', officeSupplier: 'Office 3', medicalEquip: 'Medical 3'});
 
     this.vendors = [];
     this.vendors.push({vendorName: 'CERTACURE', mobile: '+9629876543', email: 'info@certacure.com'});

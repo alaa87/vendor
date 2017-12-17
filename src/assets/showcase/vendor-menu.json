@@ -1,0 +1,24 @@
+     [ 
+         {
+            "Id": 1,
+           "title": "Vendor Registration",
+           "url": "/pages/vendorRegistration",
+           "active": false,
+           "icon":"fa fa-home"
+        },
+        
+         {
+             "Id": 3,
+             "title": "RFQ Entry",
+            "url": "/pages/rfqEntry",
+            "active": true,
+            "icon":"zmdi zmdi-tv-list"
+         },
+         {
+             "Id": 6,
+             "title": "Vendor Objections",
+            "url": "/pages/vendorObjection",
+            "active": false,
+            "icon":"fa fa-line-chart"
+         }
+    ]

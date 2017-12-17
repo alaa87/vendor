@@ -1,11 +1,4 @@
      [ 
-         {
-            "Id": 1,
-           "title": "Vendor Registration",
-           "url": "/pages/vendorRegistration",
-           "active": true,
-           "icon":"fa fa-home"
-        },
         {
             "Id": 2,
             "title": "Vendor Review",
@@ -15,9 +8,9 @@
          },
          {
              "Id": 3,
-             "title": "RFQ Entry",
+             "title": "RFQ Review",
             "url": "/pages/rfqEntry",
-            "active": false,
+            "active": true,
             "icon":"zmdi zmdi-tv-list"
          },
          {
@@ -33,12 +26,5 @@
             "url": "/pages/finalAward",
             "active": false,
             "icon":"fa fa-pie-chart"
-         },
-         {
-             "Id": 6,
-             "title": "Vendor Objections",
-            "url": "/pages/vendorObjection",
-            "active": false,
-            "icon":"fa fa-line-chart"
          }
     ]

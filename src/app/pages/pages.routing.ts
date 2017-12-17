@@ -15,7 +15,7 @@ export const routes: Routes = [
         path: 'pages',
         component: Pages,
         children: [
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'rfqEntry', pathMatch: 'full' },
             { path: 'userProfile', loadChildren: 'app/pages/user-profile/user-profile.module#UserProfileModule'},
             { path: 'home', loadChildren: 'app/pages/home/home.module#HomeModule'},
             { path: 'vendorRegistration', loadChildren: 'app/pages/vendor-registration/vendor-registration.module#VendorRegistrationModule'},

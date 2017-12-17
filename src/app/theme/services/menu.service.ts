@@ -10,8 +10,15 @@ export class MenuService {
 
     constructor(private _http: Http) { }
 
-    getMenus() {
-        return this._http.get('assets/showcase/menu.json')
+    getMenus(username: string) {
+        if(username === 'vendor')
+        {
+            return this._http.get('assets/showcase/vendor-menu.json')
             .map((response: Response) => response.json())
+        } else {
+            return this._http.get('assets/showcase/hospital-menu.json')
+            .map((response: Response) => response.json())
+        }
+        
     }
 }

@@ -19,12 +19,19 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.getMenus();
   }
 
   getMenus() {
     this.menus = [];
-    this._menuService.getMenus()
+    let user = JSON.parse(localStorage.getItem('username'))
+    if(user == 'vendor@certacure.com'){
+        user = 'vendor';
+    } else{
+      user = 'hospital';
+    }
+    this._menuService.getMenus(user)
       .subscribe((data: any[]) => {
         this.menus = data;
       });
