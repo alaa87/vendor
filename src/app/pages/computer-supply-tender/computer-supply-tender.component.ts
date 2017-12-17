@@ -64,9 +64,8 @@ export class ComputerSupplyTenderComponent {
   ngOnInit() {
 
     this.tenders = [];
-    this.tenders.push({Number: '113', Name: 'PC', Quantity: '20'});
-    this.tenders.push({Number: '212', Name: 'Printer', Quantity: '10'});
-    this.tenders.push({Number: '133', Name: 'Laptop', Quantity: '3'});
+    this.tenders.push({Number: '43211507020000', Name: 'Personal Computer', Unit: 'Piece', Quantity: '20'});
+    this.tenders.push({Number: '4321210524000', Name: 'Office Lazer Priter', Unit: 'Piece', Quantity: '3'});
   }
 
   public onSubmit(values: Object): void {

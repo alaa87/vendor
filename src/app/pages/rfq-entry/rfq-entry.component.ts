@@ -62,8 +62,8 @@ export class RfqEntryComponent {
     this.vendorDetails.push({computer: 'Computer 3', officeSupplier: 'Office 3', medicalEquip: 'Medical 3'});
 
     this.tenders = [];
-    this.tenders.push({tenderName: 'Computer Supply', date: '1/12/2017', closeDate: '13/12/2017', tenderDocument: 'Attachement 1'});
-    this.tenders.push({tenderName: 'Medical Supply', date: '5/12/2017', closeDate: '31/12/2017', tenderDocument: 'Attachement 2'});
+    this.tenders.push({tenderName: 'Computer Supply', date: '01/02/2018', closeDate: '13/12/2017', tenderDocument: 'Attachement 1'});
+    this.tenders.push({tenderName: 'Medical Supply', date: '17/02/2018', closeDate: '31/12/2017', tenderDocument: 'Attachement 2'});
   }
 
   public onSubmit(values: Object): void {

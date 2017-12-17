@@ -1,13 +1,5 @@
      [ 
          {
-            "Id": 1,
-           "title": "Vendor Registration",
-           "url": "/pages/vendorRegistration",
-           "active": false,
-           "icon":"fa fa-home"
-        },
-        
-         {
              "Id": 3,
              "title": "RFQ Entry",
             "url": "/pages/rfqEntry",

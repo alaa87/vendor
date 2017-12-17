@@ -8,8 +8,8 @@ export const routes: Routes = [
         loadChildren: 'app/pages/login/login.module#LoginModule'
     },
     {
-        path: 'register',
-        loadChildren: 'app/pages/register/register.module#RegisterModule'
+        path: 'vendorRegistration',
+        loadChildren: 'app/pages/vendor-registration/vendor-registration.module#VendorRegistrationModule'
     },
     {
         path: 'pages',
@@ -18,7 +18,6 @@ export const routes: Routes = [
             { path: '', redirectTo: 'rfqEntry', pathMatch: 'full' },
             { path: 'userProfile', loadChildren: 'app/pages/user-profile/user-profile.module#UserProfileModule'},
             { path: 'home', loadChildren: 'app/pages/home/home.module#HomeModule'},
-            { path: 'vendorRegistration', loadChildren: 'app/pages/vendor-registration/vendor-registration.module#VendorRegistrationModule'},
             { path: 'vendorReview', loadChildren: 'app/pages/vendor-review/vendor-review.module#VendorReviewModule'},
             { path: 'rfqEntry', loadChildren: 'app/pages/rfq-entry/rfq-entry.module#RfqEntryModule'},
             { path: 'computerSupplyTender', loadChildren: 'app/pages/computer-supply-tender/computer-supply-tender.module#ComputerSupplyTenderModule'},

@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { User, Country } from '../register/user'
 
+import {SelectItem} from 'primeng/primeng';
+
+
 @Component({
   selector: 'vendor-registration',
   styleUrls: ['./vendor-registration.scss'],
@@ -24,6 +27,8 @@ export class VendorRegistrationComponent {
 
   busy: Subscription;
   selectedFiles: File[];
+
+  fieldOfInterests: SelectItem[];
 
   constructor(private _router: Router, fb: FormBuilder) {
 
@@ -50,9 +55,16 @@ export class VendorRegistrationComponent {
   ngOnInit() {
 
     this.vendors = [];
-    this.vendors.push({computer: 'Computer', officeSupplier: 'Office 1', medicalEquip: 'Medical 1'});
-    this.vendors.push({computer: 'Office', officeSupplier: 'Office 2', medicalEquip: 'Medical 2'});
-    this.vendors.push({computer: 'Medical Equip', officeSupplier: 'Office 3', medicalEquip: 'Medical 3'});
+    this.vendors.push({computer: 'IT Software', officeSupplier: 'Office 1', medicalEquip: 'Medical 1'});
+    this.vendors.push({computer: 'IT Hardware', officeSupplier: 'Office 3', medicalEquip: 'Medical 3'});
+  
+    this.fieldOfInterests = [
+      {label: 'IT Hardware', value: '1'},
+      {label: 'IT Software', value: '2'},
+      {label: 'Medical Supply', value: '3'},
+      {label: 'Medications', value: '4'},
+  ];
+  
   }
 
 }

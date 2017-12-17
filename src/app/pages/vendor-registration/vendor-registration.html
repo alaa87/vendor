@@ -1,7 +1,7 @@
-<div id="main">
-  <div class="row">
-    <div class="col-sm-12">
-      <h5>HOME > Vendor Registration</h5>
+<br />
+<div class="row">
+    <div class="col-sm-12 col-centered">
+      <h5>Vendor Registration</h5>
     </div>
   </div>
   <br />
@@ -87,7 +87,7 @@
   <div class="form-horizontal">
     <div class="form-group row">
       <div class="offset-sm-4 col-sm-4">
-        <button type="submit" class="btn btn-block btn-primary btn-auth">Sign up</button>
+        <button type="submit" class="btn btn-block btn-primary btn-auth" routerLink="/login">Sign up</button>
       </div>
     </div>
   </div>
@@ -97,9 +97,9 @@
   <p-dialog header="Field of Interests" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true" [width]="500">
     <div class="form-horizontal">
       <div class="form-group row">
-        <label for="Computer" class="col-sm-4 control-label">Field of Interests</label>
+        <label for="Computer" class="col-sm-4 control-label">Item Group</label>
         <div class="col-sm-8">
-          <p-dropdown [style]="{'width':'100%'}" editable="true" placeholder="Select a Field of Interests"></p-dropdown>
+          <p-dropdown [options]="fieldOfInterests" [style]="{'width':'100%'}" editable="true" placeholder="Select a Field of Interests"></p-dropdown>
         </div>
       </div>
     </div>
@@ -110,4 +110,3 @@
       </div>
     </p-footer>
   </p-dialog>
-</div>
