@@ -8,7 +8,15 @@
 
   <div class="form-horizontal">
     <p-dataTable [value]="tenders">
-      <p-column field="tenderName" header="Tender Name"></p-column>
+      <p-column styleClass="col-button" field="tenderName" header="Tender Name" [style]="{'overflow':'visible'}">
+        <ng-template let-item="rowData" pTemplate="body">
+            <a style="
+                  color: #409ace;
+                  text-decoration: underline; cursor: pointer;" (click)="showDialogToAdd(item)">{{item.tenderName}}</a>
+        </ng-template>
+      </p-column>
+
+
       <p-column field="date" header="Date"></p-column>
       <p-column field="closeDate" header="Close Date"></p-column>
       <p-column styleClass="col-button" field="tenderDocument" header="Tender Document" [style]="{'overflow':'visible'}">
