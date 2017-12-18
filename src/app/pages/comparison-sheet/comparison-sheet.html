@@ -93,13 +93,24 @@
           </div>
         </ng-template>
       </p-column>
+      <p-column field="laptop" header="Notes" [style]="{'overflow':'visible'}">
+          <ng-template let-item="rowData" pTemplate="body">
+            <div class="form-horizontal">
+              <div class="form-group row form-group-table">
+                <div class="col-sm-12">
+                    <textarea pInputTextarea ></textarea>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-column>
     </p-dataTable>
   </div>
   <br />
   <div class="form-horizontal">
     <div class="form-group row">
       <div class="offset-sm-6 col-sm-3">
-        <button type="submit" class="btn btn-block btn-primary btn-auth" (click)="confirm1()">Award Selected</button>
+        <button type="submit" class="btn btn-block btn-primary btn-auth" (click)="confirm1()">Approve Selected</button>
       </div>
       <div class="col-sm-3">
         <button type="submit" class="btn btn-block btn-danger btn-auth" (click)="confirm2()">Cancel Award </ button>

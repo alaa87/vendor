@@ -5,7 +5,7 @@ import { NgaModule } from '../../theme/nga.module';
 
 import { ComparisonSheetComponent } from './comparison-sheet.component';
 import { routing } from './comparison-sheet.routing';
-import { CalendarModule, DataTableModule, ButtonModule, ConfirmDialogModule,ConfirmationService, InputTextModule } from 'primeng/primeng';
+import { CalendarModule, DataTableModule, ButtonModule, InputTextareaModule, ConfirmDialogModule,ConfirmationService, InputTextModule } from 'primeng/primeng';
 
 @NgModule({
   imports: [
@@ -19,6 +19,7 @@ import { CalendarModule, DataTableModule, ButtonModule, ConfirmDialogModule,Conf
     ButtonModule,
     ConfirmDialogModule,
     InputTextModule,
+    InputTextareaModule,
   ],
   declarations: [
     ComparisonSheetComponent,

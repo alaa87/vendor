@@ -53,8 +53,15 @@ export class RfqEntryComponent {
     
     this.displayDialog = false;
 }
-
+  isVendor: boolean;
   ngOnInit() {
+
+    let user = JSON.parse(localStorage.getItem('username'))
+    if(user == 'vendor@certacure.com'){
+      this.isVendor = true;
+    } else{
+      this.isVendor = false;
+    }
 
     this.vendorDetails = [];
     this.vendorDetails.push({computer: 'Computer 1', officeSupplier: 'Office 1', medicalEquip: 'Medical 1'});
